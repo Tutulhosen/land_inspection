@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ScheduleController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DependentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::post('/logedIn', [LoginController::class, 'loginProcess'])->name('admin.l
 
 Route::get('/dashboard-page', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/schedule-page', [ScheduleController::class, 'SchedulePage'])->name('schedule.page.index');
+
+ //some route for depending selected option
+ Route::post('/depend/on/office/to/role', [DependentController::class, 'dependentOnOfficeToRole'])->name('depend.on.office.to.role');
+ Route::post('/depend/on/role/to/inspector', [DependentController::class, 'dependentOnRoleToInspector'])->name('depend.on.role.to.inspector');
+ Route::post('/depend/on/division/to/role', [DependentController::class, 'dependentOnDivToRole'])->name('depend.on.div.to.role');
+ Route::post('/depend/on/division/to/office', [DependentController::class, 'OfficedependentOnDivision'])->name('depend.on.division.to.office');

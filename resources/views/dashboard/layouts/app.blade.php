@@ -5,7 +5,9 @@
 	<!--begin::Head-->
 	<head><base href="">
 		<meta charset="utf-8" />
-		<title>ইন্সপেকশন ম্যানেজমেন্ট সিস্টেম</title>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>@yield('title', $page_title ?? 'Page Title')</title>
+		{{-- <title>ইন্সপেকশন ম্যানেজমেন্ট সিস্টেম</title> --}}
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
